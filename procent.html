@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Procentage Calculator.</title>
+</head>
+<body>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="calculatePercentages()">Calculate</button>
+    <ul id="outputList"></ul>
+   
+    <script>
+       function calculatePercentages() {
+         const numberInput = document.getElementById('numberInput');
+         const number = numberInput.value;
+         const percentages = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
+         const outputList = document.getElementById('outputList');
+   
+         outputList.innerHTML = ''; 
+   
+         percentages.forEach(percent => {
+           const result = Math.floor(number * (percent / 100));
+           outputList.innerHTML += `<li>${percent}% of ${number} is ${result}</li>`;
+         });
+       }
+     </script>
+</body>
+</html>
